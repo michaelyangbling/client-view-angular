@@ -1,3 +1,4 @@
+npm install popper.js --save to make navbar dropdown work
 # ContentManagementConsumerSide
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
