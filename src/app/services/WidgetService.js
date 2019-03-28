@@ -18,9 +18,20 @@ export class WidgetService{ //singleton
         // console.log(modules, mid, 'v')
         for(let index in topics){
             if (topics[index].id===tid){
-                return topics[index].widgets
+                
+                let widgets = topics[index].widgets
+                // console.log(topics[index], topics[index].widgets, widgets)
+                for (let j in widgets){
+                    let widget = topics[index].widgets[j]
+                    if ( widget.items ){
+                        widget.items = widget.items.split('\n')
+                    }
+                }
+                console.log(topics[index].widgets)
+                return widgets
             }
         }
+
         alert("cannot find lesson")
         throw Error("cannot find lesson in module")
 
