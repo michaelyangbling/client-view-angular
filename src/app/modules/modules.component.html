@@ -1,0 +1,29 @@
+
+
+
+  <div class="container-fluid">
+    <h1> <a routerLink="/course">Back to Content List</a></h1>
+    <div class="row">
+      <div class="col-sm-2">
+        <ul class="nav nav-pills">
+          <li class="nav-item" *ngFor="let module of modules">
+            <a class="nav-link" href="javascript:void(0)" (click)="selectModule(module)">{{module.title}}</a>
+            <br/>
+          </li>
+          
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Module 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Module 3</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Module 4</a>
+          </li> -->
+        </ul>
+      <br>
+      </div>
+
+
+    </div>
+  </div>

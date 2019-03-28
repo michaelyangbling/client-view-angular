@@ -1,5 +1,6 @@
 import port from "./port.js"
-export class CourseService{ //singleton
+import { stringify } from "querystring";
+export class ModuleService{ //singleton
     constructor(){
         const instance = this.constructor.instance;
         if (instance) {
@@ -7,22 +8,25 @@ export class CourseService{ //singleton
         }//singleton
 
         this.constructor.instance = this
-        this.courses=[]
+        this.modules=[]
         this.url=port
-        this.findAllCourses=this.findAllCourses.bind(this)
+        this.findModulesForCourse=this.findModulesForCourse.bind(this)
         //this.url="https://still-basin-44392.herokuapp.com/api"
     }
 
-    findAllCourses(){ //arrow function bind this to original scope
+    findModulesForCourse(cid){ //arrow function bind this to original scope
         
-        return fetch(this.url+"/client/courses", {credentials: 'include'}).then(function(res){
+        return fetch(this.url+"/client/course/" +String(cid), {credentials: 'include'}).then(function(res){
             if( !(res.ok) ){
                 throw Error(res.statusText)
             }
             return res
         }).then(function(response){
             return response.json() //res: [ course ]
-        }).catch(function(error){alert("error check connection/ try reload")})
+        }).catch(function(error){alert("error check connection/ or cannot find course")}).then(
+            course=>course.modules
+
+        )
 
     }
 }

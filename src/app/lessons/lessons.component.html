@@ -1,0 +1,30 @@
+
+
+
+  <div class="container-fluid">
+      <h1> <a routerLink="/course">Back to Content List</a></h1>
+      <div class="row">
+        <div class="col-sm-2">
+          <ul class="nav nav-pills">
+            <li class="nav-item" *ngFor="let module of modules">
+              <a class="nav-link"  [ngClass]="{'active': module.id == params.moduleId}" 
+              href="javascript:void(0)" (click)="selectModule(module)">{{module.title}}</a>
+              <br/>
+            </li>
+            
+          </ul>
+        <br>
+        </div>
+  
+        <div class="col-sm-10">
+          <ul class="nav nav-tabs">
+            <li class="nav-item" *ngFor="let lesson of lessons">
+              <a class="nav-link" (click)="selectLesson(lesson)" href="javascript:void(0)">{{lesson.title}}</a>
+            </li>
+          </ul>
+          <br>
+  
+        </div>
+      </div>
+    </div>
+  

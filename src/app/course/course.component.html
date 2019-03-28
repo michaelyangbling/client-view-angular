@@ -50,7 +50,9 @@
 
     <tbody>
         <tr *ngFor="let course of courses">
-            <td class="form-control btn btn-primary" style="overflow:hidden;white-space: nowrap">{{course.title}}</td>
+            <td>
+            <a routerLink ="{{'/course/'+course.id+'/module'}}" class="form-control btn btn-primary" style="overflow:hidden;white-space: nowrap">{{course.title}}</a>
+            </td>
             <td>{{course.username.split(',')[2]}}</td>
             <td></td>
             <td>{{course.username.split(',')[0]}} {{course.username.split(',')[1]}}</td>
