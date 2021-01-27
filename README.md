@@ -3,6 +3,7 @@ angular version client for course management system
 
 heroku website may be unavailable since heroku free trial expires
 
+view contents of content management system published by publishers for client/consumer side
 
 https://client-view-angular.herokuapp.com/course
 npm install popper.js --save to make navbar dropdown work
